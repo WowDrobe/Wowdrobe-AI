@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "WowDrobe"
+version = "0.1.0"
+description = ""
+authors = ["Prathik Shetty <prathikkshetty15@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+flask = "^3.0.1"
+requests = "^2.31.0"
+google-generativeai = "^0.3.2"
+python-dotenv = "^1.0.1"
+pillow = "^10.2.0"
+pandas = "^2.2.0"
+flask-cors = "^4.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
