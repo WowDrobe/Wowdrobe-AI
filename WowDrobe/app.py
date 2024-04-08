@@ -19,7 +19,7 @@ CORS(app)
 
 @app.route('/recommend', methods=['GET'])
 def body_analyse():
-   
+    attire= request.args.get('attire')
     img_url = request.args.get('img_url')
 
     if img_url:
@@ -34,7 +34,7 @@ def body_analyse():
            
             model = genai.GenerativeModel('gemini-pro-vision')
 
-            response = model.generate_content([" analyze uploaded images of people and generates personalized outfit suggestions based on their attire, style preferences, and contextual information such as weather and occasion. The model should output a list of clothing items or a styled image reflecting the suggested outfit. pls conisder the gender of the person and recommend accordingly", image], stream=True)
+            response = model.generate_content([f' analyze uploaded image of the person and generate a personalized outfit suggestions based on their {attire} preference and contextual information such as weather and occasion. The model should output a list of clothing items or a styled image reflecting the suggested outfit. pls conisder the gender of the person and recommend accordingly summarize it', image], stream=True)
             response.resolve()
 
            
